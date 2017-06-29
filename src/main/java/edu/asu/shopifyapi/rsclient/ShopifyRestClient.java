@@ -40,7 +40,7 @@ public class ShopifyRestClient {
 		JsonParserResultStore resultStore = new JsonParserResultStore();
 
 		while (hasOrders) {
-			String jsonString = getAllOrders(page++);
+			String jsonString = getAllOrdersFromAPI(page++);
 			hasOrders = hasOrdersToProcess(jsonString);
 
 			if (hasOrders) {
@@ -52,7 +52,7 @@ public class ShopifyRestClient {
 		return resultStore;
 	}
 
-	private String getAllOrders(int page) {
+	private String getAllOrdersFromAPI(int page) {
 
 		String jsonString = null;
 
